@@ -1,0 +1,5 @@
+export { default as Compatible } from './Compatible'
+export { default as KeyPath } from './KeyPath'
+export * from './pathed-utils'
+export { default as Plain } from './Plain'
+export { default as Resolve } from './Resolve'
