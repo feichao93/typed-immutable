@@ -2,6 +2,17 @@
 
 一些用于嵌套 Immutable.js 数据结构下 TS 类型工具。详情可见 [知乎专栏文章](https://zhuanlan.zhihu.com/p/58679875)。
 
+## 目录
+
+- [安装](#安装)
+- [API](#api)
+  - [类型安全的 `getIn/setIn`](#类型安全的-getinsetin)
+  - [`Plain`](#plaind)
+  - [`Resolve`](#resolved-ks)
+  - [`KeyPath`](#keypathd)
+  - [`Compatible` TODO](#compatibled-todo)
+  - [`FromJS` TODO](#fromjsd-todo)
+
 ## 安装
 
 本项目要求 TS 版本 >= 3.4。鉴于 TS 3.4 尚未发布，目前只能通过 `yarn add typescript@next` 进行安装，故安装本项目请使用 githubname/reponame 的方式。
