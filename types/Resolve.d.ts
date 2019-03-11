@@ -14,6 +14,7 @@ type ResolveLevel4<D, K1, K2, K3, K4> = ResolveLevel1<ResolveLevel3<D, K1, K2, K
 // type ResolveLevel6<D, K1, K2, K3, K4, K5, K6> = ResolveLevel1<ResolveLevel5<D, K1, K2, K3, K4, K5>, K6>
 // type ResolveLevel7<D, K1, K2, K3, K4, K5, K6, K7> = ResolveLevel1<ResolveLevel6<D, K1, K2, K3, K4, K5, K6>, K7>
 
+/** 用于从不可变数据中获取 keyPath 对应的数据类型 */
 // prettier-ignore
 type Resolve<D, KS extends readonly any[]> =
   KS extends readonly[] ? D :

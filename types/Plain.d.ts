@@ -5,7 +5,9 @@ import { Map, Set, List, Record } from 'immutable'
 /** 利用 Plain 将一个对象的所有字段转换为「普通 JS 数据类型 」*/
 type PlainObject<T> = { [P in keyof T]: Plain<T[P]> }
 
-/** 从 immutable 数据类型中生成「普通 JS 数据类型 」，支持 Record、List、Map、Set */
+/** 从不可变数据类型中生成「普通 JS 数据类型 」，支持 `Record / List / Map / Set`.
+ * 嵌套层次最多为 4
+ */
 // prettier-ignore
 type Plain<D> =
   D extends Record<infer R> ? PlainObject<R> :

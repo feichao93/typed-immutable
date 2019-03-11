@@ -4,8 +4,9 @@
     "noEmit": true,
     "target": "es2018",
     "strict": true,
+    "strictNullChecks": false,
     "baseUrl": ".",
     "paths": { "typed-immutable": ["."] }
   },
-  "include": ["__tests__"]
+  "include": ["tests"]
 }
