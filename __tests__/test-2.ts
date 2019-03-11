@@ -1,5 +1,5 @@
 import { List, Record } from 'immutable'
-import FromJS from '../FromJS'
+import { FromJS } from 'typed-immutable'
 
 type Direction = 'up' | 'left' | 'right' | 'down'
 
@@ -61,7 +61,7 @@ Tank.fromJS({
 
 // 输入不正确时，正确报告类型错误 👍
 Tank.fromJS({
-  direction: 'foo',  // ts(2322): Type '"foo"' is not assignable to type 'Direction'.
+  direction: 'foo', // ts(2322): Type '"foo"' is not assignable to type 'Direction'.
 })
 
 // 🚫 ts(2559): Type 'readonly [...]' has no properties in common with type 'Readonly<Partial<...>>'

@@ -1,5 +1,5 @@
-import { List, Map, Record } from 'immutable'
-import { setIn, getIn, Plain, KeyPath } from '..'
+import { List, Record } from 'immutable'
+import { getIn, KeyPath, Plain } from 'typed-immutable'
 
 type Direction = 'up' | 'left' | 'right' | 'down'
 

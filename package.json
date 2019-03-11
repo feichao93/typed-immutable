@@ -1,8 +1,12 @@
 {
   "name": "typed-immutable",
-  "description": "Some typing helpers that handle nested immutable data structure/operations.",
+  "description": "Some typing helpers that handle nested immutable data structure/operations. (TS >= 3.4)",
   "private": true,
   "version": "0.1.0-SNAPSHOT",
+  "types": "types",
+  "scripts": {
+    "dtslint": "dtslint types"
+  },
   "author": {
     "email": "842351815@qq.com",
     "name": "Shi Feichao",
