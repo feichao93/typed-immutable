@@ -7,7 +7,10 @@ export type CompatibleObject<T> = { [P in keyof T]: Compatible<T[P]> }
 export type CompatibleKeyValuePairs<R> =
   ReadonlyArray<valueof<{ [P in keyof R]: readonly[P, Compatible<R[P]>] }>>
 
-/** 从 immutable 数据类型中生成「普通 JS 数据类型 」 */
+/** 计算与不可变数据类型“兼容”的「普通 JS 数据类型 」。
+ * “兼容”表示该类型可以按 [该文章](https://zhuanlan.zhihu.com/p/58679875) 
+ * 中的方式转换为相应的不可变数据类型。
+ */
 // prettier-ignore
 export type Compatible<T> =
   T extends Record<infer R> ? CompatibleObject<R> | CompatibleKeyValuePairs<R> :

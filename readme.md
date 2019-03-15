@@ -7,11 +7,11 @@
 - [安装](#安装)
 - [API](#api)
   - [类型安全的 `getIn/setIn`](#类型安全的-getinsetin)
-  - [`Plain`](#plaind)
-  - [`Resolve`](#resolved-ks)
-  - [`KeyPath`](#keypathd)
-  - [`Compatible` TODO](#compatibled-todo)
-  - [`FromJS` TODO](#fromjsd-todo)
+  - [`Plain<D>`](#plaind)
+  - [`Resolve<D, KS>`](#resolved-ks)
+  - [`KeyPath<D>`](#keypathd)
+  - [`Compatible<D>`](#compatibled)
+  - [`FromJS<D>`](#fromjsd)
 
 ## 安装
 
@@ -118,6 +118,31 @@ type C = KeyPath<Tank>
 //   | readonly['bullets', number, 'direction']
 ```
 
-### `Compatible<D>` TODO
+### `Compatible<D>`
 
-### `FromJS<D>` TODO
+计算与不可变数据类型“兼容”的「普通 JS 数据类型 」。“兼容”表示该类型可以按 [该文章](https://zhuanlan.zhihu.com/p/58679875) 中的方式转换为相应的不可变数据类型。
+
+```typescript
+type A = Compatible<List<string>>
+// type A = List<string> | string[]
+
+type B = Compatible<Map<string, Set<number>>>
+// type B =
+//   | Map<string, Set<number> | number[]>
+//   | Iterable<readonly [string, Set<number> | number[]]>
+//   | { [key:string]: Set<number> | number[] }
+
+declare class Point extends Record({ x: 0, y: 0 }) {}
+type C = Compatible<Point>
+// type C =
+//   | { x: number, y: number }
+//   | ReadonlyArray<readonly['x', number] | readonly['y',number]>
+```
+
+### `FromJS<D>`
+
+在使用继承 Record 的方式来定义数据类型时，`FromJS<D>` 一般用于表示 `fromJS` 方法的参数类型。具体的例子可见 [/tests/interfaces.ts](/tests/interfaces.ts).
+
+```typescript
+type FromJS<T> = Readonly<Partial<Compatible<T>>>
+```
