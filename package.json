@@ -2,7 +2,7 @@
   "name": "typed-immutable",
   "description": "Some typing helpers that handle nested immutable data structure/operations. (TS >= 3.4)",
   "private": true,
-  "version": "0.1.0-SNAPSHOT",
+  "version": "0.1.0",
   "types": "types",
   "author": {
     "email": "842351815@qq.com",
@@ -14,6 +14,6 @@
   },
   "devDependencies": {
     "prettier": "^1.16.4",
-    "typescript": "next"
+    "typescript": "^3.4.1"
   }
 }

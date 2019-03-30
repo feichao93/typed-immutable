@@ -1,4 +1,3 @@
-import Immutable from 'immutable'
 import KeyPath from './KeyPath'
 import Resolve from './Resolve'
 

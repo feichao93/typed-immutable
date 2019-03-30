@@ -15,7 +15,7 @@
 
 ## 安装
 
-本项目要求 TS 版本 >= 3.4。鉴于 TS 3.4 尚未发布，目前只能通过 `yarn add typescript@next` 进行安装，故安装本项目请使用 githubname/reponame 的方式。
+本项目要求 TS 版本 >= 3.4。可以通过 githubname/reponame 的方式来安装该类库。
 
 ```bash
 yarn add shinima/typed-immutable
